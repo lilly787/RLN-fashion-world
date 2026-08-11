@@ -23,6 +23,9 @@
             <a href="shop.html" class="active">Products</a>
             <a href="index.html#blog">Blog</a>
             <a href="index.html#contact">Contact</a>
+            <a href="#" id="cart-icon" class="cart-icon-link">
+                🛒 <span id="cart-count">0</span>
+            </a>
         </nav>
     </header>
 
@@ -42,48 +45,53 @@
         <section class="shop-grid">
             <!-- Original AI Products -->
             <div class="product-card reveal" data-category="men">
-                <img src="../../brain/f0b137f7-c832-4d14-9c70-6c9f47327f1c/product_men_1780485350937.png" alt="Men's Minimalist Jacket" class="product-image">
+                <img src="images/image2.jpg" alt="Men's Minimalist Jacket" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Men's</div>
                     <h3 class="product-title">Minimalist Studio Jacket</h3>
-                    <div class="product-price">$189.00</div>
+                    <div class="product-price">&#8358;55,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p4" data-name="Minimalist Studio Jacket" data-price="55000" data-image="images/image2.jpg" data-category="men">Add to Cart</button>
                 </div>
             </div>
 
             <div class="product-card reveal" data-category="women">
-                <img src="../../brain/f0b137f7-c832-4d14-9c70-6c9f47327f1c/product_women_1780485373826.png" alt="Women's Elegant Dress" class="product-image">
+                <img src="images/image3.jpg" alt="Women's Elegant Dress" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Women's</div>
                     <h3 class="product-title">Midnight Elegance Dress</h3>
-                    <div class="product-price">$245.00</div>
+                    <div class="product-price">&#8358;42,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p5" data-name="Midnight Elegance Dress" data-price="42000" data-image="images/image3.jpg" data-category="women">Add to Cart</button>
                 </div>
             </div>
 
             <div class="product-card reveal" data-category="kids">
-                <img src="../../brain/f0b137f7-c832-4d14-9c70-6c9f47327f1c/product_kids_1780485394106.png" alt="Kid's Trendy Outfit" class="product-image">
+                <img src="images/image4.jpg" alt="Kid's Trendy Outfit" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Kids</div>
                     <h3 class="product-title">Vibrant Streetwear Set</h3>
-                    <div class="product-price">$85.00</div>
+                    <div class="product-price">&#8358;18,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p6" data-name="Vibrant Streetwear Set" data-price="18000" data-image="images/image4.jpg" data-category="kids">Add to Cart</button>
                 </div>
             </div>
 
             <!-- New User Uploaded Products -->
             <div class="product-card reveal" data-category="women">
-                <img src="images/image 1.jpg" alt="New Arrival" class="product-image">
+                <img src="images/image1.jpg" alt="New Arrival" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Women's</div>
                     <h3 class="product-title">Summer Collection Item</h3>
-                    <div class="product-price">$120.00</div>
+                    <div class="product-price">&#8358;35,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p7" data-name="Summer Collection Item" data-price="35000" data-image="images/image1.jpg" data-category="women">Add to Cart</button>
                 </div>
             </div>
 
             <div class="product-card reveal" data-category="men">
-                <img src="images/image 2.jpg" alt="New Arrival" class="product-image">
+                <img src="images/image2.jpg" alt="New Arrival" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Men's</div>
                     <h3 class="product-title">Classic Urban Wear</h3>
-                    <div class="product-price">$95.00</div>
+                    <div class="product-price">&#8358;28,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p8" data-name="Classic Urban Wear" data-price="28000" data-image="images/image2.jpg" data-category="men">Add to Cart</button>
                 </div>
             </div>
 
@@ -92,20 +100,62 @@
                 <div class="product-info">
                     <div class="product-tag">Women's</div>
                     <h3 class="product-title">Evening Wear Edition</h3>
-                    <div class="product-price">$160.00</div>
+                    <div class="product-price">&#8358;48,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p9" data-name="Evening Wear Edition" data-price="48000" data-image="images/image3.jpg" data-category="women">Add to Cart</button>
                 </div>
             </div>
 
             <div class="product-card reveal" data-category="kids">
-                <img src="images/image 4.jpg" alt="New Arrival" class="product-image">
+                <img src="images/image4.jpg" alt="New Arrival" class="product-image">
                 <div class="product-info">
                     <div class="product-tag">Kids</div>
                     <h3 class="product-title">Playful Streetwear</h3>
-                    <div class="product-price">$65.00</div>
+                    <div class="product-price">&#8358;12,000</div>
+                    <button class="btn add-to-cart-btn" data-id="p10" data-name="Playful Streetwear" data-price="12000" data-image="images/image4.jpg" data-category="kids">Add to Cart</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- SIZE SELECTION MODAL -->
+    <div class="modal-overlay" id="size-modal">
+        <div class="modal-content size-modal-content">
+            <div class="modal-header">
+                <h3>Select Size</h3>
+                <button class="close-modal" id="close-size-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-product-info" class="modal-product-info">
+                    <!-- populated via js -->
+                </div>
+                <div class="size-selector modal-sizes" id="modal-size-selector">
+                    <!-- buttons populated via js -->
+                </div>
+                <span class="size-error" id="modal-size-error">Please select a size</span>
+                <button class="btn" id="confirm-size-btn" style="width: 100%; margin-top: 1rem;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be injected here via JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">&#8358;0</span>
+                </div>
+                <a href="checkout.html" class="btn checkout-btn" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

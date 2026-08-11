@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | RLN Fashion World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="navbar" class="scrolled">
+        <a href="index.html#home" class="logo">
+            <div class="logo-circle">
+                <span class="brand-text">RLN</span>
+            </div>
+            <div class="logo-text">
+                <span>RLN</span> <span class="brand-text">FASHION WORLD</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="shop.html">Products</a>
+            <a href="index.html#blog">Blog</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="#" id="cart-icon" class="cart-icon-link">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout-section">
+            <h1 class="hero-title reveal" style="text-align: center; margin-bottom: 3rem;">Checkout</h1>
+            
+            <div class="checkout-container reveal">
+                <!-- Order Summary -->
+                <div class="order-summary-container">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items" class="checkout-items">
+                        <!-- Items populated via JS -->
+                    </div>
+                    <div class="checkout-total">
+                        <span>Total:</span>
+                        <span id="checkout-subtotal">&#8358;0</span>
+                    </div>
+                </div>
+
+                <!-- Checkout Form -->
+                <div class="contact-form-container checkout-form">
+                    <h3>Shipping Details</h3>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Phone Number</label>
+                            <input type="tel" id="checkout-phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-address">Delivery Address</label>
+                            <textarea id="checkout-address" class="form-control" required style="min-height: 80px;"></textarea>
+                        </div>
+                        
+                        <!-- Future Payment Integration Note -->
+                        <!-- NOTE FOR DEVELOPERS: -->
+                        <!-- This is where a payment gateway like Paystack or Flutterwave would be integrated. -->
+                        <!-- Instead of simply placing an order, this button would trigger the payment modal. -->
+                        <!-- See script.js checkout form submission logic for more details. -->
+                        
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CART OVERLAY (Even on checkout page so it doesn't break if clicked) -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be injected here via JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">&#8358;0</span>
+                </div>
+                <a href="checkout.html" class="btn checkout-btn" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

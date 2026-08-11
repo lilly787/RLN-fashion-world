@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RLN Fashion World | Welcome</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Welcome to RLN Fashion World - Your Digital Clothing Store.">
+    <meta name="description" content="Welcome to RLN Fashion World - Quality Nigerian fashion for men, women, and kids.">
 </head>
 <body>
     <header id="navbar">
@@ -23,6 +23,9 @@
             <a href="#blog">Blog</a>
             <a href="shop.html">Products</a>
             <a href="#contact">Contact</a>
+            <a href="#" id="cart-icon" class="cart-icon-link">
+                🛒 <span id="cart-count">0</span>
+            </a>
         </nav>
     </header>
 
@@ -30,99 +33,81 @@
         <!-- HOME SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to Our Digital Clothing Store!</h1>
-                <p class="hero-desc">Experience the future of fashion. Discover exclusive digital and physical collections crafted for the modern trendsetter.</p>
+                <h1 class="hero-title">Style Made for You — Welcome to RLN Fashion World</h1>
+                <p class="hero-desc">From everyday looks to special occasions, we bring you quality Nigerian fashion for men, women, and kids.</p>
                 <a href="shop.html" class="btn">Shop Now</a>
             </div>
             <div class="hero-image-wrapper">
-                <img src="../../brain/f0b137f7-c832-4d14-9c70-6c9f47327f1c/hero_image_1780485335576.png" alt="Digital Clothing Workspace" class="hero-image">
+                <img src="images/image1.jpg" alt="RLN Fashion World Collection" class="hero-image">
                 <div class="hero-image-overlay"></div>
             </div>
         </section>
 
-        <!-- EVENTS SECTION -->
-        <section class="events reveal" id="events">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="events-grid">
-                <!-- Day 1 -->
-                <div class="event-day">
-                    <h3 class="day-title">June 1</h3>
-                    <div class="event-item">
-                        <div class="event-time">10:00 am</div>
-                        <div class="event-name">Launch</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">1:00 pm</div>
-                        <div class="event-name">Panel Discussion</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">6:00 pm</div>
-                        <div class="event-name">Networking</div>
+        <!-- NEW ARRIVALS SECTION -->
+        <section class="new-arrivals reveal" id="new-arrivals">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="arrivals-grid">
+                <div class="product-card">
+                    <img src="images/image2.jpg" alt="Men's Collection" class="product-image">
+                    <div class="product-info">
+                        <p class="product-tag">Men's Collection</p>
+                        <h3 class="product-title">Classic Senator Suit</h3>
+                        <p class="product-price">&#8358;45,000</p>
+                        <button class="btn add-to-cart-btn" data-id="p1" data-name="Classic Senator Suit" data-price="45000" data-image="images/image2.jpg" data-category="men">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Day 2 -->
-                <div class="event-day">
-                    <h3 class="day-title">June 2</h3>
-                    <div class="event-item">
-                        <div class="event-time">7:00 am</div>
-                        <div class="event-name">Yoga Session</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">9:00 am</div>
-                        <div class="event-name">Keynote Speech</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">12:30 pm</div>
-                        <div class="event-name">Workshop</div>
+                <div class="product-card">
+                    <img src="images/image3.jpg" alt="Women's Collection" class="product-image">
+                    <div class="product-info">
+                        <p class="product-tag">Women's Collection</p>
+                        <h3 class="product-title">Ankara Midi Dress</h3>
+                        <p class="product-price">&#8358;22,000</p>
+                        <button class="btn add-to-cart-btn" data-id="p2" data-name="Ankara Midi Dress" data-price="22000" data-image="images/image3.jpg" data-category="women">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Day 3 -->
-                <div class="event-day">
-                    <h3 class="day-title">June 3</h3>
-                    <div class="event-item">
-                        <div class="event-time">7:00 am</div>
-                        <div class="event-name">Morning Run</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">9:00 am</div>
-                        <div class="event-name">Team Building</div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-time">11:30 am</div>
-                        <div class="event-name">Closing Remarks</div>
+                <div class="product-card">
+                    <img src="images/image4.jpg" alt="Kids' Collection" class="product-image">
+                    <div class="product-info">
+                        <p class="product-tag">Kids' Collection</p>
+                        <h3 class="product-title">Embroidered Kaftan Set</h3>
+                        <p class="product-price">&#8358;15,000</p>
+                        <button class="btn add-to-cart-btn" data-id="p3" data-name="Embroidered Kaftan Set" data-price="15000" data-image="images/image4.jpg" data-category="kids">Add to Cart</button>
                     </div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="shop.html" class="btn">View All Products</a>
             </div>
         </section>
 
         <!-- ABOUT SECTION -->
         <section id="about" class="about-section">
             <h1 class="hero-title reveal">Our Story</h1>
-            <p class="hero-desc reveal">Redefining modern aesthetics through digital innovation and premium craftsmanship.</p>
+            <p class="hero-desc reveal">Quality clothing, honest prices, and style that speaks for itself.</p>
 
             <div class="about-content reveal">
                 <div class="about-text">
                     <h2>The Vision</h2>
-                    <p>RLN Fashion World was established to bridge the gap between virtual couture and tangible elegance. We design premium apparel for the digital age, catering to men, women, and kids who dare to express themselves uniquely.</p>
-                    <p>Every piece starts as a digital blueprint, refined through high-tech simulation before transitioning into production. This minimizes waste and maximizes precision, ensuring that you receive apparel of unparalleled quality.</p>
+                    <p>RLN Fashion World was born from a love of beautiful clothing and a belief that every Nigerian deserves to look and feel their best — without breaking the bank. We make quality fashion for men, women, and kids who take pride in how they show up to the world.</p>
+                    <p>Every piece in our collection is carefully chosen with attention to fabric, fit, and finish. From the stitching to the styling, what you wear from RLN carries the kind of quality you can feel the moment you put it on.</p>
                 </div>
                 <div class="about-image-wrapper">
-                    <img src="images/image 5.jpg" alt="About RLN Fashion" class="about-image" style="width: 100%; border-radius: 16px; object-fit: cover; display: block; max-height: 450px; border: 1px solid var(--border);">
+                    <img src="images/image5.jpg" alt="About RLN Fashion" class="about-image" style="width: 100%; border-radius: 16px; object-fit: cover; display: block; max-height: 450px; border: 1px solid var(--border);">
                 </div>
             </div>
 
             <div class="about-values reveal">
                 <div class="value-card">
-                    <h3>Innovation</h3>
-                    <p>Pioneering new ways to conceptualize, design, and experience premium apparel in both digital and physical spaces.</p>
+                    <h3>Fresh Styles</h3>
+                    <p>We are always updating our collection with new looks — bringing you the latest in Nigerian and global fashion so you stay ahead of the trend.</p>
                 </div>
                 <div class="value-card">
                     <h3>Quality First</h3>
-                    <p>Sourcing premium materials and utilizing precision tailoring to deliver durable, comfortable clothing.</p>
+                    <p>We source quality fabrics and pay close attention to every stitch and seam, so every item you receive is one you are proud to wear.</p>
                 </div>
                 <div class="value-card">
-                    <h3>Sustainability</h3>
-                    <p>Reducing ecological footprint through on-demand manufacturing processes and digital-first design prototyping.</p>
+                    <h3>Made to Last</h3>
+                    <p>We care about fashion that lasts — every piece is built with the kind of care and craftsmanship that stands the test of time.</p>
                 </div>
             </div>
         </section>
@@ -135,7 +120,7 @@
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
                 <article class="blog-card reveal">
-                    <img src="images/image 6.jpg" alt="The Evolution of Digital Apparel" class="blog-image">
+                    <img src="images/image6.jpg" alt="The Evolution of Digital Apparel" class="blog-image">
                     <div class="blog-info">
                         <span class="blog-date">June 3, 2026</span>
                         <h2 class="blog-title">The Evolution of Digital Apparel</h2>
@@ -180,16 +165,12 @@
                 <div class="contact-info">
                     <div class="contact-card">
                         <h3>Email Us</h3>
-                        <p>Ngoziomotola2022@gmail.com</p>
-                        <p>lizzyfrancis34@gmail.com</p>
-                        <p>chidiebererita24@gmail.com</p>
+                        <p><a href="mailto:preciouspady@gmail.com" style="color: inherit;">preciouspady@gmail.com</a></p>
                     </div>
 
                     <div class="contact-card">
-                        <h3>Call Us</h3>
-                        <p>08152528102</p>
-                        <p>09021758624</p>
-                        <p>09160013452</p>
+                        <h3>Call / WhatsApp</h3>
+                        <p><a href="https://wa.me/2348080827232" style="color: inherit;">08080827232</a></p>
                     </div>
 
                     <div class="contact-card">
@@ -201,25 +182,28 @@
 
                 <!-- Contact Form Section -->
                 <div class="contact-form-container">
-                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will get back to you soon.');">
+                    <form action="https://formspree.io/f/mvkpaqbe" method="POST">
+                        <!-- Redirect to thank-you page after successful submission -->
+                        <input type="hidden" name="_next" value="thank-you.html">
+
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Inquiry about collections" required>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Inquiry about collections" required>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" class="form-control" placeholder="Your message here..." required></textarea>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your message here..." required></textarea>
                         </div>
 
                         <button type="submit" class="btn" style="width: 100%;">Send Message</button>
@@ -228,6 +212,46 @@
             </div>
         </section>
     </main>
+
+    <!-- SIZE SELECTION MODAL -->
+    <div class="modal-overlay" id="size-modal">
+        <div class="modal-content size-modal-content">
+            <div class="modal-header">
+                <h3>Select Size</h3>
+                <button class="close-modal" id="close-size-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-product-info" class="modal-product-info">
+                    <!-- populated via js -->
+                </div>
+                <div class="size-selector modal-sizes" id="modal-size-selector">
+                    <!-- buttons populated via js -->
+                </div>
+                <span class="size-error" id="modal-size-error">Please select a size</span>
+                <button class="btn" id="confirm-size-btn" style="width: 100%; margin-top: 1rem;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be injected here via JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">&#8358;0</span>
+                </div>
+                <a href="checkout.html" class="btn checkout-btn" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
