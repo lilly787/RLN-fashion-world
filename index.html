@@ -30,6 +30,10 @@
     </header>
 
     <main>
+        <div class="promo-bar" id="deal-banner"><strong>FLASH DEALS</strong><span>Extra savings end in</span><b id="deal-timer">02:14:33</b><a href="shop.html">Shop now &rarr;</a></div>
+        <div class="category-strip" aria-label="Shop categories">
+            <a href="shop.html"><span>✦</span>Fashion</a><a href="shop.html"><span>⌂</span>Home</a><a href="shop.html"><span>◈</span>Beauty</a><a href="shop.html"><span>☆</span>Kids</a><a href="shop.html"><span>+</span>New in</a>
+        </div>
         <div class="marketplace-strip"><strong>RLN DEALS</strong><span>Fresh styles. Better prices. New drops every week.</span><a href="shop.html">Explore deals &rarr;</a></div>
         <!-- HOME SECTION -->
         <section id="home" class="hero">
@@ -79,6 +83,12 @@
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="shop.html" class="btn">View All Products</a>
             </div>
+        </section>
+
+        <section class="reward-grid reveal" aria-label="Rewards and promotions">
+            <article class="reward-card checkin-card"><span class="reward-kicker">DAILY REWARD</span><h3>Check in & earn</h3><p>Keep your 3-day streak and unlock a new reward.</p><button class="btn reward-action" id="checkin-btn">Claim today</button></article>
+            <article class="reward-card mystery-card"><span class="reward-kicker">MYSTERY BOX</span><h3>What’s inside?</h3><p>Open a box for a surprise Lizzybees discount.</p><button class="btn reward-action" id="mystery-btn">Open box</button></article>
+            <article class="reward-card referral-card"><span class="reward-kicker">INVITE & EARN</span><h3>Unlock ₦10,000</h3><p>Invite friends and track your progress.</p><div class="referral-progress"><span></span></div><button class="btn reward-action" id="referral-btn">Invite a friend</button></article>
         </section>
 
         <!-- ABOUT SECTION -->
@@ -213,6 +223,12 @@
             </div>
         </section>
     </main>
+
+    <div class="modal-overlay reward-modal" id="spin-modal">
+        <div class="modal-content spin-content"><button class="close-modal" id="close-spin-modal">&times;</button><span class="reward-kicker">WELCOME REWARD</span><h2>Spin to win up to ₦50,000 off</h2><div class="spin-wheel" id="spin-wheel"><span>₦50k</span><span>20% OFF</span><span>₦10k</span><span>FREE DELIVERY</span></div><button class="btn" id="spin-btn">Spin the wheel</button><p class="reward-terms">New accounts only. One reward per customer. Discount applies to eligible orders and expires 24 hours after claiming.</p><p class="spin-result" id="spin-result"></p><a class="signup-link" href="contact.html">Sign up to claim your prize &rarr;</a></div>
+    </div>
+
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation"><a href="index.html" class="active"><span>⌂</span>Home</a><a href="shop.html"><span>◈</span>Categories</a><a href="#cart-icon"><span>🛒</span>Cart</a><a href="contact.html"><span>◯</span>Account</a></nav>
 
     <!-- SIZE SELECTION MODAL -->
     <div class="modal-overlay" id="size-modal">

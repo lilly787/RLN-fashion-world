@@ -412,6 +412,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // e.g., let handler = PaystackPop.setup({ key: '...', email: document.getElementById('checkout-email').value, ... });
             // handler.openIframe();
             
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-burst';
+            confetti.innerHTML = Array.from({ length: 24 }, (_, index) => `<i style="--i:${index}"></i>`).join('');
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 1800);
             alert("Order Placed Successfully! (This is a demo)");
             
             // Clear cart
@@ -420,6 +425,69 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = "thank-you.html";
         });
     }
+
+    // Marketplace reward mechanics
+    const dealTimer = document.getElementById('deal-timer');
+    if (dealTimer) {
+        let secondsLeft = 2 * 60 * 60 + 14 * 60 + 33;
+        const updateTimer = () => {
+            const hours = String(Math.floor(secondsLeft / 3600)).padStart(2, '0');
+            const minutes = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, '0');
+            const seconds = String(secondsLeft % 60).padStart(2, '0');
+            dealTimer.textContent = `${hours}:${minutes}:${seconds}`;
+            secondsLeft = secondsLeft > 0 ? secondsLeft - 1 : 2 * 60 * 60 + 14 * 60 + 33;
+        };
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+
+    const spinModal = document.getElementById('spin-modal');
+    const spinButton = document.getElementById('spin-btn');
+    const spinWheel = document.getElementById('spin-wheel');
+    const spinResult = document.getElementById('spin-result');
+    if (spinModal && !sessionStorage.getItem('rln_spin_seen')) {
+        setTimeout(() => spinModal.classList.add('open'), 900);
+    }
+    document.getElementById('close-spin-modal')?.addEventListener('click', () => {
+        spinModal?.classList.remove('open');
+        sessionStorage.setItem('rln_spin_seen', '1');
+    });
+    spinButton?.addEventListener('click', () => {
+        spinButton.disabled = true;
+        spinWheel.style.transform = 'rotate(1440deg)';
+        setTimeout(() => {
+            spinResult.textContent = 'You won 20% off! Sign up below to claim it.';
+            spinButton.textContent = 'Prize unlocked';
+            sessionStorage.setItem('rln_spin_seen', '1');
+        }, 2600);
+    });
+    document.getElementById('checkin-btn')?.addEventListener('click', (event) => {
+        event.target.textContent = 'Day 1 claimed ✓';
+        event.target.disabled = true;
+        localStorage.setItem('rln_checkin_date', new Date().toDateString());
+    });
+    document.getElementById('mystery-btn')?.addEventListener('click', (event) => {
+        event.target.textContent = 'You won 10% off ✓';
+        event.target.disabled = true;
+    });
+    document.getElementById('referral-btn')?.addEventListener('click', async () => {
+        const shareText = 'Join me on Lizzybees and unlock a shopping reward!';
+        if (navigator.share) await navigator.share({ title: 'Lizzybees reward', text: shareText, url: window.location.href });
+        else await navigator.clipboard?.writeText(`${shareText} ${window.location.href}`);
+    });
+
+    document.querySelectorAll('.product-card').forEach((card, index) => {
+        const priceElement = card.querySelector('.product-price');
+        if (!priceElement || card.querySelector('.deal-meta')) return;
+        const price = Number(card.querySelector('.add-to-cart-btn')?.dataset.price || 0);
+        const discount = [62, 45, 38, 68][index % 4];
+        const original = Math.round(price / (1 - discount / 100));
+        priceElement.innerHTML = `<span class="original-price">₦${original.toLocaleString()}</span> <strong>₦${price.toLocaleString()}</strong><b class="discount-badge">-${discount}%</b>`;
+        const meta = document.createElement('div');
+        meta.className = 'deal-meta';
+        meta.innerHTML = `<span class="rating">★ 4.${6 + (index % 4)}</span> <span>${120 + index * 87}+ sold</span> <span class="stock-note">Only ${2 + (index % 4)} left</span>`;
+        priceElement.after(meta);
+    });
 
     // Initialize UI on load
     updateCartCount();
